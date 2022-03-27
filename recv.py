@@ -43,7 +43,7 @@ while True:
     ackPL = [1]
     while not radio.available(0):
         time.sleep(1/100)
-    time.sleep(1/100)
+    time.sleep(1)
     recievedMessage = []
     radio.read(recievedMessage, radio.getDynamicPayloadSize())
     print("Recieved: ", recievedMessage)
