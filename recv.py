@@ -35,7 +35,7 @@ radio.enableDynamicPayloads()
 radio.enableAckPayload()
 
 radio.openReadingPipe(1, pipes[0])
-radio.printDeatails()
+radio.printDetails()
 
 radio.startListening()
 
