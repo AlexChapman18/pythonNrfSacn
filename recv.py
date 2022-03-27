@@ -24,7 +24,7 @@ GPIO.setmode(GPIO.BCM)
 pipes = [[0xe7, 0xe7, 0xe7, 0xe7, 0xe7]]
 
 radio = NRF24(GPIO, spidev.SpiDev())
-radio.begin(0, 17)
+radio.begin(0, 25)
 radio.setPayloadSize(32)
 radio.setChannel(0x60)
 
