@@ -21,22 +21,22 @@ sender.stop()  # do not forget to stop the sender
 
 # Radio
 GPIO.setmode(GPIO.BCM)
-pipes = [[0xE8, 0xE8, 0xF0, 0xF0, 0xE1], [0xF0, 0xF0, 0xF0, 0xF0, 0xE1]]
+pipes = [[0xE8, 0xE8, 0xF0, 0xF0, 0xE1], [240, 240, 240, 240, 225]]
 
 radio = NRF24(GPIO, spidev.SpiDev())
 radio.begin(0, 17)
-radio.setPayloadSize(32)
-radio.setChannel(0x76)
 
+radio.setPayloadSize(32)
+radio.setChannel(76)
 radio.setDataRate(NRF24.BR_1MBPS)
 radio.setPALevel(NRF24.PA_MIN)
+
 radio.setAutoAck(True)
 radio.enableDynamicPayloads()
 radio.enableAckPayload()
 
 radio.openReadingPipe(1, pipes[1])
 radio.printDetails()
-
 radio.startListening()
 
 while True:
